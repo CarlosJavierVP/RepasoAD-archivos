@@ -1,0 +1,17 @@
+1: <?xml version="1.0" encoding="UTF-8"?>
+2: <project xmlns="http://maven.apache.org/POM/4.0.0"
+3:          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+4:          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+5:     <modelVersion>4.0.0</modelVersion>
+6: 
+7:     <groupId>org.example</groupId>
+8:     <artifactId>archivos</artifactId>
+9:     <version>1.0-SNAPSHOT</version>
+10: 
+11:     <properties>
+12:         <maven.compiler.source>20</maven.compiler.source>
+13:         <maven.compiler.target>20</maven.compiler.target>
+14:         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+15:     </properties>
+16: 
+17: </project>
