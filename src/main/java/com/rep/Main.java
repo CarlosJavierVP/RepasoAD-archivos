@@ -43,7 +43,7 @@ public class Main {
             try (BufferedReader bfr = new BufferedReader(new InputStreamReader(url.openStream()))){
                 String linea;
                 while ((linea = bfr.readLine()) != null){
-                    if (linea.contains("<title>")) System.out.println(linea);
+                    System.out.println(linea);
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
