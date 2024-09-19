@@ -11,4 +11,12 @@ public class Juego implements Serializable {
     private Integer año;
     private String genero;
     private String desarrollador;
+
+    public String toCSV(){
+        return titulo+", "+
+                plataforma+", "+
+                año+", "+
+               genero+", "+
+               desarrollador;
+    }
 }
