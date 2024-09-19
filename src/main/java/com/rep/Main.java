@@ -1,6 +1,8 @@
 package com.rep;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,6 +33,24 @@ public class Main {
         leerArchivo(archivo);
         leerArchivo2(archivo);
         copiarArchivoTexto("pom.xml", "pom2.xml");
+        //falta url
+        scrapUrl("https://.es");
+
+    }
+    private static void scrapUrl(String ruta){
+        try {
+            URL url = new URL(ruta);
+            try (BufferedReader bfr = new BufferedReader(new InputStreamReader(url.openStream()))){
+                String linea;
+                while ((linea = bfr.readLine()) != null){
+                    if (linea.contains("<title>")) System.out.println(linea);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
