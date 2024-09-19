@@ -3,6 +3,7 @@ package com.rep;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,9 +35,25 @@ public class Main {
         leerArchivo2(archivo);
         copiarArchivoTexto("pom.xml", "pom2.xml");
         //falta url
-        scrapUrl("https://.es");
+        //scrapUrl("https://.es");
+        leerScanner("pom.xml");
 
     }
+
+    private static void leerScanner(String ruta){
+        try {
+            Scanner sc = new Scanner(new File(ruta));
+            //delimitador de cara a saltar a la siguiente línea
+            //sc.useDelimiter("=");
+            while(sc.hasNextLine()){
+                System.out.println(sc.nextLine());
+                //System.out.println(sc.next());
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    /*
     private static void scrapUrl(String ruta){
         try {
             URL url = new URL(ruta);
@@ -53,6 +70,8 @@ public class Main {
         }
 
     }
+
+     */
 
     private static void copiarArchivoTexto(String archivo, String archivo2){
         try(BufferedReader bfr = new BufferedReader(new FileReader(archivo));
