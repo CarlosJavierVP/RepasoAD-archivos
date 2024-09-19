@@ -3,6 +3,7 @@ package com.rep;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class Main {
@@ -37,6 +38,19 @@ public class Main {
         //falta url
         //scrapUrl("https://.es");
         leerScanner("pom.xml");
+
+        //Un properties es un mapa (clave, valor)
+        Properties prop = new Properties();
+        prop.setProperty("nombre", "Jauja");
+        prop.setProperty("apellido", "Jareje");
+        prop.setProperty("correo", "nanana@gmail.com");
+
+        System.out.println(prop);
+        try {
+            prop.store(new FileWriter("props.cfg"), "Info de usuario");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
